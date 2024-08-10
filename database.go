@@ -14,7 +14,7 @@ var (
 )
 
 func DB_Connection() {
-	db, err := gorm.Open(mysql.Open("root:0987@tcp(localhost:3306)/TB_Berkah_Jaya?parseTime=true"))
+	db, err := gorm.Open(mysql.Open("root:0987@tcp(host.docker.internal:3306)/TB_Berkah_Jaya?parseTime=true"))
 	if err != nil {
 		panic(err)
 	}
