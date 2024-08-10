@@ -1,3 +1,5 @@
+github.com/RaihanAnthony/models_TB_Berkah_Jaya v0.0.0-20240808145118-aaa66b86ce82 h1:uTsswrK1dj2Awey7RF9M+IbvmVGV/4sYRFbWt+Quvco=
+github.com/RaihanAnthony/models_TB_Berkah_Jaya v0.0.0-20240808145118-aaa66b86ce82/go.mod h1:L8M7vFP9oSITiBpWp/aw/4NPx6GRiUzqO9lZ1ZQp370=
 github.com/go-sql-driver/mysql v1.7.0 h1:ueSltNNllEqE3qcWBTD0iQd3IpL/6U+mJxLkazJ7YPc=
 github.com/go-sql-driver/mysql v1.7.0/go.mod h1:OXbVy3sEdcQ2Doequ6Z5BW6fXNQTmx+9S1MCJN5yJMI=
 github.com/golang-jwt/jwt/v5 v5.2.1 h1:OuVbFODueb089Lh128TAcimifWaLhJwVflnrgM17wHk=

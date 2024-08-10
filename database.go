@@ -3,8 +3,7 @@ package config
 import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	"TB_Berkah_Jaya/models"
-
+	models "github.com/RaihanAnthony/models_TB_Berkah_Jaya"
 )
 
 var (

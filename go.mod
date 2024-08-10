@@ -3,6 +3,7 @@ module github.com/RaihanAnthony/config-TB_Berkah_Jaya
 go 1.22.2
 
 require (
+	github.com/RaihanAnthony/models_TB_Berkah_Jaya v0.0.0-20240808145118-aaa66b86ce82
 	github.com/golang-jwt/jwt/v5 v5.2.1
 	github.com/gorilla/sessions v1.3.0
 	gorm.io/driver/mysql v1.5.7
