@@ -8,7 +8,11 @@ import (
 	models "github.com/RaihanMalay21/models_TB_Berkah_Jaya"
 )
 
-func DB_Connection() (*gorm.DB, error) {
+var (
+	DB *gorm.DB
+)
+
+func DB_Connection() {
 	var (
 		dbUser = os.Getenv("DB_USER")
 		dbPwdd = os.Getenv("DB_PASSWORD")
@@ -22,7 +26,7 @@ func DB_Connection() (*gorm.DB, error) {
 
 	db, err := gorm.Open(mysql.Open(dbURI))
 	if err != nil {
-		return nil, err
+		panic(err)
 	}
 
 	db.AutoMigrate(&models.User{})
@@ -32,5 +36,5 @@ func DB_Connection() (*gorm.DB, error) {
 	db.AutoMigrate(&models.Pembelian_Per_Item{})
 	db.AutoMigrate(&models.HadiahUser{})
 
-	return db, nil
+	DB = db
 }
