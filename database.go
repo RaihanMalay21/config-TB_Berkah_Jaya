@@ -1,22 +1,28 @@
 package config 
 
 import (
+	"fmt"
+	"os"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	models "github.com/RaihanMalay21/models_TB_Berkah_Jaya"
 )
 
-var (
-	DB *gorm.DB
-	// custemer models.Custemer
-	// barang  models.Barang
-	// hadiah models.Hadiah
-)
+func DB_Connection() (*gorm.DB, error) {
+	var (
+		dbUser = os.Getenv("DB_USER")
+		dbPwdd = os.Getenv("DB_PASSWORD")
+		dbHost = os.Getenv("DB_HOST")
+		dbPort = "3306"
+		dbName = os.Getenv("DB_NAME")
+	)
 
-func DB_Connection() {
-	db, err := gorm.Open(mysql.Open("root:0987@tcp(host.docker.internal:3306)/TB_Berkah_Jaya?parseTime=true"))
+	// Build the DSN (Data Source Name)
+	dbURI := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", dbUser, dbPwdd, dbHost, dbPort, dbName)
+
+	db, err := gorm.Open(mysql.Open(dbURI))
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	db.AutoMigrate(&models.User{})
@@ -26,5 +32,5 @@ func DB_Connection() {
 	db.AutoMigrate(&models.Pembelian_Per_Item{})
 	db.AutoMigrate(&models.HadiahUser{})
 
-	DB = db
+	return db, nil
 }
