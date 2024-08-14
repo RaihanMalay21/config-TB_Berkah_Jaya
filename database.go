@@ -17,7 +17,7 @@ func DB_Connection() {
 		dbUser = os.Getenv("DB_USER")
 		dbPwdd = os.Getenv("DB_PASSWORD")
 		dbHost = "/cloudsql/api-tb-berkah-jaya:us-central1:db-tb-berkah-jaya21"
-		dbPort = "3306"
+		dbPort = os.Getenv("DB_PORT")
 		dbName = os.Getenv("DB_NAME")
 	)
 
