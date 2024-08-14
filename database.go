@@ -16,7 +16,8 @@ func DB_Connection() {
 	var (
 		dbUser = os.Getenv("DB_USER")
 		dbPwdd = os.Getenv("DB_PASSWORD")
-		dbHost = os.Getenv("DB_HOST")
+		// dbHost = os.Getenv("DB_HOST")
+		dbHost = "localhost"
 		dbPort = "3306"
 		dbName = os.Getenv("DB_NAME")
 	)
