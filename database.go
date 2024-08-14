@@ -16,14 +16,13 @@ func DB_Connection() {
 	var (
 		dbUser = os.Getenv("DB_USER")
 		dbPwdd = os.Getenv("DB_PASSWORD")
-		// dbHost = os.Getenv("DB_HOST")
-		dbHost = "localhost"
+		dbHost = os.Getenv("DB_HOST")
 		dbPort = "3306"
 		dbName = os.Getenv("DB_NAME")
 	)
 
 	// Build the DSN (Data Source Name)
-	dbURI := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", dbUser, dbPwdd, dbHost, dbPort, dbName)
+	dbURI := fmt.Sprintf("host=%s user=%s password=%s port=%s database=%s", dbHost, dbUser, dbPwdd, dbPort, dbName)
 
 	db, err := gorm.Open(mysql.Open(dbURI))
 	if err != nil {
