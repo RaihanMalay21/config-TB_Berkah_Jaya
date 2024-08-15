@@ -1,7 +1,6 @@
 package config 
 
 import (
-	"log"
 	"fmt"
 	"os"
 	"gorm.io/driver/mysql"
@@ -43,7 +42,7 @@ func DB_Connection() {
 
 	db, err := gorm.Open(mysql.Open(dbURI))
 	if err != nil {
-		log.Fatalf("failed to connect database: %v", err)
+		panic(err)
 	}
 
 	db.AutoMigrate(&models.User{})
