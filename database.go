@@ -31,7 +31,7 @@ func DB_Connection() {
 	}
 	dbHost = os.Getenv("DB_HOST")
 	if dbHost == "" {
-		dbHost = "/cloudsql/api-tb-berkah-jaya:us-central1:db-tb-berkah-jaya21"
+		dbHost = "35.194.32.137"
 	}
 	dbName = os.Getenv("DB_NAME")
 	if dbName == "" {
