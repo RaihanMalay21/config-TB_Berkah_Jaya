@@ -21,6 +21,11 @@ func DB_Connection() {
 		dbName = os.Getenv("DB_NAME")
 	)
 
+	dbUser = "root"
+	dbPwdd = "0987"
+	dbHost = "localhost"
+	dbName = "TB_Berkah_Jaya"
+
 	dbURI := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", dbUser, dbPwdd, dbHost, dbPort, dbName)
 
 	db, err := gorm.Open(mysql.Open(dbURI))
