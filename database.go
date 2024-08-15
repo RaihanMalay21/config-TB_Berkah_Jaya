@@ -31,14 +31,14 @@ func DB_Connection() {
 	}
 	dbHost = os.Getenv("DB_HOST")
 	if dbHost == "" {
-		dbHost = "35.194.32.137"
+		dbHost = "/cloudsql/api-tb-berkah-jaya:us-central1:db-tb-berkah-jaya21"
 	}
 	dbName = os.Getenv("DB_NAME")
 	if dbName == "" {
 		dbName = "db_tb_berkah_jaya"
 	}
 
-	dbURI := fmt.Sprintf("%s:%s@unix(%s)/%s?parseTime=true", dbUser, dbPwdd, dbHost, dbPort, dbName)
+	dbURI := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", dbUser, dbPwdd, dbHost, dbPort, dbName)
 
 	db, err := gorm.Open(mysql.Open(dbURI))
 	if err != nil {
