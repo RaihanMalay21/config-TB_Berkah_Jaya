@@ -42,7 +42,7 @@ func DB_Connection() {
 
 	db, err := gorm.Open(mysql.Open(dbURI))
 	if err != nil {
-		panic(err)
+		log.Fatalf("failed to connect database: %v", err)
 	}
 
 	db.AutoMigrate(&models.User{})
