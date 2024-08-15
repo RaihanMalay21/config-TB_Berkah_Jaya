@@ -21,8 +21,7 @@ func DB_Connection() {
 		dbName = os.Getenv("DB_NAME")
 	)
 
-	// Build the DSN (Data Source Name)
-	dbURI := fmt.Sprintf("host=%s user=%s password=%s port=%s database=%s", dbHost, dbUser, dbPwdd, dbPort, dbName)
+	dbURI := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", dbUser, dbPwdd, dbHost, dbPort, dbName)
 
 	db, err := gorm.Open(mysql.Open(dbURI))
 	if err != nil {
