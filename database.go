@@ -1,6 +1,7 @@
 package config 
 
 import (
+	"log"
 	"fmt"
 	"os"
 	"gorm.io/driver/mysql"
