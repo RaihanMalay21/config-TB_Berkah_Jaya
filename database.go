@@ -21,13 +21,13 @@ func DB_Connection() {
 	// 	dbName = os.Getenv("DB_NAME")
 	// )
 
-	dbUser := "root"
-	dbPwdd := "0987"
-	dbHost := "localhost"
-	dbPort := "3306"
-	dbName := "TB_Berkah_Jaya"
+	// dbUser := "root"
+	// dbPwdd := "0987"
+	// dbHost := "localhost"
+	// dbPort := "3306"
+	// dbName := "TB_Berkah_Jaya"
 
-	dbURI := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", dbUser, dbPwdd, dbHost, dbPort, dbName)
+	dbURI := fmt.Sprintf("root:0987@tcp(localhost:3306)/TB_Berkah_Jaya?parseTime=true", dbUser, dbPwdd, dbHost, dbPort, dbName)
 
 	db, err := gorm.Open(mysql.Open(dbURI))
 	if err != nil {
