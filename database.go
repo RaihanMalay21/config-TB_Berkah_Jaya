@@ -27,9 +27,7 @@ func DB_Connection() {
 	// dbPort := "3306"
 	// dbName := "TB_Berkah_Jaya"
 
-	dbURI := fmt.Sprintf("root:0987@tcp(localhost:3306)/TB_Berkah_Jaya?parseTime=true", dbUser, dbPwdd, dbHost, dbPort, dbName)
-
-	db, err := gorm.Open(mysql.Open(dbURI))
+	db, err := gorm.Open(mysql.Open("root:0987@tcp(localhost:3306)/TB_Berkah_Jaya?parseTime=true", dbUser, dbPwdd, dbHost, dbPort, dbName))
 	if err != nil {
 		panic(err)
 	}
