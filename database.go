@@ -13,18 +13,19 @@ var (
 )
 
 func DB_Connection() {
-	var (
-		dbUser = os.Getenv("DB_USER")
-		dbPwdd = os.Getenv("DB_PASSWORD")
-		dbHost = os.Getenv("DB_HOST")
-		dbPort = "3306"
-		dbName = os.Getenv("DB_NAME")
-	)
+	// var (
+	// 	dbUser = os.Getenv("DB_USER")
+	// 	dbPwdd = os.Getenv("DB_PASSWORD")
+	// 	dbHost = os.Getenv("DB_HOST")
+	// 	dbPort = "3306"
+	// 	dbName = os.Getenv("DB_NAME")
+	// )
 
-	dbUser = "root"
-	dbPwdd = "0987"
-	dbHost = "localhost"
-	dbName = "TB_Berkah_Jaya"
+	dbUser := "root"
+	dbPwdd := "0987"
+	dbHost := "localhost"
+	dbPort := "3306"
+	dbName := "TB_Berkah_Jaya"
 
 	dbURI := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", dbUser, dbPwdd, dbHost, dbPort, dbName)
 
