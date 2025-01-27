@@ -1,11 +1,12 @@
-package config 
+package config
 
 import (
 	"fmt"
 	"os"
+
+	models "github.com/RaihanMalay21/models_TB_Berkah_Jaya"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	models "github.com/RaihanMalay21/models_TB_Berkah_Jaya"
 )
 
 var (
@@ -16,7 +17,7 @@ func DB_Connection() {
 	var (
 		dbUser string
 		dbPwdd string
-		dbHost  string
+		dbHost string
 		dbName string
 	)
 
