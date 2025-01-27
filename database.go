@@ -1,11 +1,11 @@
-package config 
+package config
 
 import (
 	"fmt"
-	"os"
+
+	models "github.com/RaihanMalay21/models_TB_Berkah_Jaya"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	models "github.com/RaihanMalay21/models_TB_Berkah_Jaya"
 )
 
 var (
@@ -16,14 +16,14 @@ func DB_Connection() {
 	var (
 		dbUser string
 		dbPwdd string
-		dbHost  string
+		dbHost string
 		dbName string
 	)
 
-	dbUser = os.Getenv("DB_USER")
-	dbPwdd = os.Getenv("DB_PASSWORD")
-	dbHost = os.Getenv("DB_HOST")
-	dbName = os.Getenv("DB_NAME")
+	dbUser = getParameter("DB_USER")
+	dbPwdd = getParameter("DB_PASSWORD")
+	dbHost = getParameter("DB_HOST")
+	dbName = getParameter("DB_NAME")
 
 	dbURI := fmt.Sprintf("%s:%s@tcp(%s)/%s?parseTime=true", dbUser, dbPwdd, dbHost, dbName)
 
